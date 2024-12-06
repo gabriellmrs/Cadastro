@@ -1,0 +1,33 @@
+/* Define a fonte globalmente */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Define o estilo do cabeçalho */
+  .header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    background-color: #282c34;
+    font-family: 'Poppins', sans-serif; /* Aplica a fonte ao cabeçalho */
+  }
+  
+  /* Estilo dos links */
+  .header a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 600; /* Usa peso médio para dar mais destaque */
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Efeito ao passar o mouse */
+  .header a:hover {
+    color: #61dafb;
+    transform: scale(1.1);
+  }
+  

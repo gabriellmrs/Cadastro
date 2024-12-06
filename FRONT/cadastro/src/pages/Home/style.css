@@ -1,0 +1,63 @@
+/* Estilo para o container principal */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa a altura total da janela */
+    background-color: #f4f4f9; /* Fundo claro */
+    padding: 20px; /* Espaçamento interno */
+  }
+  
+  /* Estilo do formulário */
+  form {
+    display: flex;
+    flex-direction: column; /* Organiza os inputs em coluna */
+    gap: 15px; /* Espaçamento entre os elementos */
+    background-color: #ffffff; /* Fundo branco */
+    padding: 30px; /* Espaçamento interno */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    width: 100%;
+    max-width: 400px; /* Largura máxima */
+  }
+  
+  /* Estilo para os inputs */
+  form input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc; /* Borda cinza */
+    border-radius: 5px; /* Cantos arredondados */
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Mudança de borda no foco */
+  form input:focus {
+    border-color: #61dafb; /* Cor azul no foco */
+    outline: none; /* Remove a borda padrão */
+  }
+  
+  /* Estilo do botão */
+  form button {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff; /* Texto branco */
+    background-color: #61dafb; /* Fundo azul */
+    border: none;
+    border-radius: 5px; /* Cantos arredondados */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Efeito no botão ao passar o mouse */
+  form button:hover {
+    background-color: #21a1f1; /* Azul mais escuro */
+    transform: scale(1.05); /* Leve aumento */
+  }
+  
+  /* Efeito ao clicar no botão */
+  form button:active {
+    background-color: #1e90d6; /* Azul ainda mais escuro */
+    transform: scale(1); /* Volta ao tamanho normal */
+  }
+  
