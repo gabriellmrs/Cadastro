@@ -27,7 +27,7 @@ body {
   
   /* Efeito ao passar o mouse */
   .header a:hover {
-    color: #61dafb;
+    color: #ff6f61;
     transform: scale(1.1);
   }
   

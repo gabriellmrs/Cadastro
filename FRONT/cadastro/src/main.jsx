@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";//rota
 import "./index.css";
 import Home from "./pages/Home";
-import Header from "./pages/Header";
 import App from "./App";
 import Consultar from "./pages/Consultar";
 
