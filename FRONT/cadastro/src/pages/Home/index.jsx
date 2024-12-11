@@ -1,4 +1,5 @@
 import './style.css'
+import api from '../../services/api'
 
 function Home() {
   
