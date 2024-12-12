@@ -22,16 +22,28 @@ function Consultar() {
         <div className='container'>
             <h1>CONSULTAR</h1>
             {usuarios.length > 0 ? (
-                usuarios.map((usuario) => (
-                    <div key={usuario.ID} className='card'>
-                        <div>
-                            <p>ID: <span>{usuario.ID}</span></p>
-                            <p>Nome: <span>{usuario.NOME}</span></p>
-                            <p>Idade: <span>{usuario.IDADE}</span></p>
-                            <p>Email: <span>{usuario.EMAIL}</span></p>
-                        </div>
-                    </div>
-                ))
+                <div className="table-container">
+                    <table className="styled-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>NOME</th>
+                                <th>IDADE</th>
+                                <th>EMAIL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {usuarios.map((usuario) => (
+                                <tr key={usuario.ID}>
+                                    <td>{usuario.ID}</td>
+                                    <td>{usuario.NOME}</td>
+                                    <td>{usuario.IDADE}</td>
+                                    <td>{usuario.EMAIL}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             ) : (
                 <p>Nenhum usuário encontrado.</p>
             )}

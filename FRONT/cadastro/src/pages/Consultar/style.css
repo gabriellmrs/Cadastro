@@ -1,1 +1,92 @@
- 
+/* Estilo geral */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  padding: 20px;
+  overflow-y: auto; /* Permite rolagem vertical */
+  overflow-x: auto; 
+}
+
+/* Título */
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* Container da tabela */
+.table-container {
+  width: 100%;
+  max-width: 90%;
+  overflow-x: auto; /* Adiciona rolagem horizontal se necessário */
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+/* Tabela estilizada */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  min-width: 600px;
+}
+
+/* Cabeçalho da tabela */
+.styled-table thead tr {
+  background-color: #ff6f61;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+/* Linhas do corpo */
+.styled-table tbody tr {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f9f9f9; /* Cor de fundo para linhas alternadas */
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #ff6f61;
+}
+
+/* Linhas interativas */
+.styled-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Mensagem quando não há dados */
+p {
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  color: #333333;
+  text-align: center;
+  margin-top: 20px;
+}
