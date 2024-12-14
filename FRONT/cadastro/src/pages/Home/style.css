@@ -30,6 +30,7 @@ form {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra mais visível */
   width: 100%;
   max-width: 400px; /* Largura máxima */
+  margin-top: 100px;
 }
 
 /* Estilo do título */
@@ -82,4 +83,82 @@ form button:hover {
 form button:active {
   background-color: #d94a40; /* Laranja ainda mais escuro */
   transform: scale(1); /* Volta ao tamanho normal */
+}
+
+.notification-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente */
+  z-index: 1000; /* Certifique-se de que fique acima de todos os outros elementos */
+}
+
+.notification {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.notification-overlay.fade-out {
+  animation: fadeOut 1s forwards; /* Animação para desaparecer */
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.notification-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5); /* Fundo escuro semi-transparente */
+  z-index: 1000; /* Certifique-se de que fique acima de todos os outros elementos */
+}
+
+.notification {
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.notification-overlay.success .notification {
+  background-color: #4CAF50; /* Verde para sucesso */
+  color: white;
+}
+
+.notification-overlay.error .notification {
+  background-color: #f44336; /* Vermelho para erro */
+  color: white;
+}
+
+.notification-overlay.fade-out {
+  animation: fadeOut 1s forwards; /* Animação para desaparecer */
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
