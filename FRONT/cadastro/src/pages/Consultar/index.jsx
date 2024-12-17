@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'react';
 import './style.css';
 import api from '../../services/api';
+import Trash from '../../assets/trash.svg'
+
+async function deleteUsers(ID) {
+    await api.delete(`/usuarios/${ID}`)
+}
 
 function Consultar() {
     const [usuarios, setUsuarios] = useState([]);
@@ -30,6 +35,7 @@ function Consultar() {
                                 <th>NOME</th>
                                 <th>IDADE</th>
                                 <th>EMAIL</th>
+                                <th>  </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -39,6 +45,11 @@ function Consultar() {
                                     <td>{usuario.NOME}</td>
                                     <td>{usuario.IDADE}</td>
                                     <td>{usuario.EMAIL}</td>
+                                    <td>
+                                        <button onClick={() => deleteUsers(usuario.ID)}>
+                                            <img src={Trash} alt='Delete' />
+                                        </button>
+                                    </td>
                                 </tr>
                             ))}
                         </tbody>
