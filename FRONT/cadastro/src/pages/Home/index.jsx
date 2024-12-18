@@ -1,7 +1,6 @@
 import './style.css'
 import api from '../../services/api'
 import { useRef, useState } from 'react'
-//import router from '../../../../../BACK/router/routes'
 
 function Home() {
 

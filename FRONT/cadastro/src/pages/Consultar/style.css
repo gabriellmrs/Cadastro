@@ -90,3 +90,101 @@ p {
   text-align: center;
   margin-top: 20px;
 }
+
+.trash {
+  background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.trash:hover {
+  opacity: 0.5;
+}
+
+/* Fundo escuro do modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Fundo escuro semi-transparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Box do modal */
+.modal-content {
+  background: #fff;
+  padding: 40px; /* Aumenta o padding */
+  border-radius: 15px; /* Bordas mais suaves */
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3); /* Sombra mais forte */
+  text-align: center;
+  max-width: 500px; /* Aumenta a largura */
+  width: 90%; /* Ajuste responsivo */
+  animation: slideDown 0.3s ease-in-out;
+}
+
+/* Texto dentro do modal */
+.modal-content p {
+  font-size: 1.5rem; /* Fonte maior */
+  color: #333;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Container dos botões */
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Espaçamento entre os botões */
+}
+
+/* Estilo básico para os botões */
+.modal-buttons button {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px; /* Bordas mais arredondadas */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Transição suave */
+}
+
+/* Botão OK */
+.modal-buttons button:first-child {
+  background: #ff7e5f; /* Cor de destaque */
+  color: #fff;
+}
+
+.modal-buttons button:first-child:hover {
+  background: #e25b3f; /* Cor mais escura no hover */
+  transform: translateY(-3px); /* Movimento sutil */
+  box-shadow: 0 10px 15px rgba(255, 126, 95, 0.4);
+}
+
+/* Botão Cancelar */
+.modal-buttons button:last-child {
+  background: #e0e0e0; /* Cor neutra */
+  color: #333;
+}
+
+.modal-buttons button:last-child:hover {
+  background: #bdbdbd; /* Cor mais escura no hover */
+  transform: translateY(-3px); /* Movimento sutil */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animação de entrada do modal */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
