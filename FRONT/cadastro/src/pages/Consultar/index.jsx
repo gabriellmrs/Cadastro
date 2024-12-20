@@ -3,6 +3,7 @@ import './style.css';
 import api from '../../services/api';
 import Trash from '../../assets/trash.svg'
 import Lapis from '../../assets/lapis.svg'
+import Lupa from '../../assets/lupa.svg'
 
 
 
@@ -13,8 +14,10 @@ function Consultar() {
 
     const [showEditModal, setShowEditModal] = useState(false); // Controla o modal de edição
     const [editedUser, setEditedUser] = useState({ NOME: "", IDADE: "", EMAIL: "" }); // Armazena o usuário sendo editado
-    
+
     const [showNotification, setShowNotification] = useState(false);
+
+    const [searchText, setSearchText] = useState("")
 
     async function getUsuarios() {
         try {
@@ -64,7 +67,7 @@ function Consultar() {
 
             setTimeout(() => {
                 setShowNotification(false);
-              }, 3000);
+            }, 3000);
             closeEditModal();
             getUsuarios(); // Atualiza a lista de usuários
         } catch (error) {
@@ -72,6 +75,22 @@ function Consultar() {
             alert("Erro ao atualizar usuário.");
         }
     }
+
+    // Função para buscar usuários pelo nome
+    async function searchUser(nome) {
+        try {
+            const response = await api.get(`/usuarios/${nome}`); // Faz a requisição com o nome
+            setUsuarios(response.data); // Atualiza a lista de usuários com os resultados
+        } catch (error) {
+            if (error.response && error.response.status === 404) {
+                setUsuarios([]); // Limpa a lista caso não encontre resultados
+            } else {
+                console.error("Erro ao buscar usuário:", error);
+                alert("Erro ao buscar usuário.");
+            }
+        }
+    }
+
     useEffect(() => {
         getUsuarios(); // Chama a função ao carregar o componente
     }, []);
@@ -79,6 +98,13 @@ function Consultar() {
     return (
         <div className='container'>
             <h1>CONSULTAR</h1>
+            <div className='search-box'>
+                <input type="text" placeholder='Pesquisar' className='search-txt'
+                    value={searchText} onChange={(e) => setSearchText(e.target.value)} />
+                <button onClick={() => searchUser(searchText)}>
+                    <img src={Lupa} alt="Pesquisar" />
+                </button>
+            </div>
             {usuarios.length > 0 ? (
                 <div className="table-container">
                     <table className="styled-table">
@@ -171,12 +197,12 @@ function Consultar() {
                 </div>
             )}
             {showNotification && (
-          <div className="modal-show">
-            <div className="modal-show-edit">
-              <p>USUÁRIO EDITADO COM SUCESSO!</p>
-            </div>
-          </div>
-        )}
+                <div className="modal-show">
+                    <div className="modal-show-edit">
+                        <p>USUÁRIO EDITADO COM SUCESSO!</p>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

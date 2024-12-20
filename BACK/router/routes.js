@@ -14,6 +14,29 @@ router.get("/usuarios", async (req, res) => {
     }
 })
 
+router.get("/usuarios/:NOME", async (req, res) => {
+    const { NOME } = req.params; // Captura o nome do parâmetro da URL
+
+    try {
+        const conexao = await connectToDatabase(); // Conecta ao banco
+        const resultado = await conexao
+            .request()
+            .input("NOME", `%${NOME}%`) // Adiciona os curingas para busca parcial
+            .query("SELECT * FROM tb_usuario WHERE NOME LIKE @NOME"); // Busca usuários com nome parcial
+
+        if (resultado.recordset.length === 0) {
+            return res.status(404).send("Usuário não encontrado."); // Retorna 404 se nenhum registro for encontrado
+        }
+
+        res.json(resultado.recordset); // Retorna os usuários encontrados
+    } catch (err) {
+        console.error("Erro ao buscar usuário por nome:", err);
+        res.status(500).send("Erro ao buscar usuário por nome.");
+    }
+});
+
+
+
 router.post("/cadastrar", async (req, res) => {
     const { NOME, IDADE, EMAIL } = req.body
     try {

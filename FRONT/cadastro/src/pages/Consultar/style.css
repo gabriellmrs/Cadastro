@@ -362,3 +362,60 @@ p {
   margin-bottom: 15px; /* Espaçamento menor abaixo do título */
 }
 
+/* Container da barra de pesquisa */
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 400px; /* Limita a largura */
+  margin: 20px auto; /* Centraliza na tela */
+}
+
+/* Estilo do input */
+.search-txt {
+  width: 100%; /* O input ocupa todo o espaço disponível */
+  padding: 10px 15px; /* Espaço interno */
+  padding-right: 50px; /* Reserva espaço para o botão */
+  font-size: 1rem;
+  border: 2px solid #ccc; /* Borda fina */
+  border-radius: 25px; /* Bordas arredondadas */
+  outline: none;
+  transition: all 0.3s ease-in-out; /* Transição suave para hover e foco */
+}
+
+/* Estilo do input no foco */
+.search-txt:focus {
+  border-color: #ff7e5f; /* Borda com destaque */
+  box-shadow: 0 0 5px rgba(255, 126, 95, 0.4); /* Sombra no foco */
+}
+
+/* Botão com a lupa */
+.search-box button {
+  position: absolute;
+  right: 10px; /* Posiciona dentro do input */
+  background: transparent; /* Remove fundo do botão */
+  border: none; /* Remove borda do botão */
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Ícone da lupa */
+.search-box button img {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0.5); /* Lupa com tom neutro */
+  transition: filter 0.3s ease;
+}
+
+/* Efeito de hover no botão */
+.search-box button:hover img {
+  filter: brightness(1); /* Destaca a lupa no hover */
+  opacity: 0.5;
+}
