@@ -91,6 +91,12 @@ p {
   margin-top: 20px;
 }
 
+.opcoes {
+  display: flex;
+  justify-content: space-around;
+  
+}
+
 .trash {
   background-color: transparent;
     border: none;
@@ -98,6 +104,17 @@ p {
 }
 
 .trash:hover {
+  opacity: 0.5;
+}
+
+.lapis {
+  height: 50px;
+  background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.lapis:hover {
   opacity: 0.5;
 }
 
@@ -188,3 +205,160 @@ p {
     transform: translateY(0);
   }
 }
+/* Fundo escuro do modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Fundo escuro com maior opacidade */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden; /* Evita rolagem enquanto o modal está aberto */
+}
+
+/* Box do modal */
+.modal-content {
+  background: #ffffff; /* Fundo branco */
+  padding: 25px 20px; /* Espaço interno ajustado */
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Sombra elegante */
+  text-align: center; /* Centraliza o conteúdo */
+  max-width: 450px; /* Largura máxima */
+  width: 90%; /* Responsivo */
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Título do modal */
+.modal-content p {
+  font-size: 1.4rem; /* Tamanho ajustado */
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 15px; /* Espaçamento menor abaixo do título */
+}
+
+/* Formulário no modal */
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espaçamento entre os campos */
+  margin-top: 10px; /* Espaço pequeno acima do formulário */
+}
+
+/* Labels */
+/* Estilo para as labels */
+.edit-form label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
+  text-align: left;
+  display: flex; /* Usa flex para organizar os elementos */
+  flex-direction: column; /* Coloca o texto e o input em coluna */
+  gap: 8px; /* Adiciona espaçamento vertical entre o texto da label e o input */
+  margin-bottom: 15px; /* Espaçamento abaixo do conjunto label + input */
+}
+
+
+/* Campos de entrada */
+.edit-form input {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.edit-form input:focus {
+  border-color: #ff7e5f;
+  box-shadow: 0 0 5px rgba(255, 126, 95, 0.4);
+  outline: none;
+}
+
+/* Botões */
+.modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Espaçamento entre os botões */
+  margin-top: 20px;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Botão Alterar */
+.modal-buttons button:first-child {
+  background: linear-gradient(135deg, #4caf50, #45a049); /* Gradiente de verde */
+  color: #fff;
+}
+
+.modal-buttons button:first-child:hover {
+  background: linear-gradient(135deg, #45a049, #388e3c);
+  box-shadow: 0 5px 10px rgba(72, 187, 120, 0.4); /* Sombra elegante no hover */
+}
+
+/* Botão Cancelar */
+.modal-buttons button:last-child {
+  background: #f1f1f1;
+  color: #555;
+}
+
+.modal-buttons button:last-child:hover {
+  background: #e0e0e0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Animação de entrada do modal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.modal-show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Fundo escuro com maior opacidade */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden; /* Evita rolagem enquanto o modal está aberto */
+}
+
+.modal-show-edit {
+  background: #60c358; /* Fundo branco */
+  padding: 25px 20px; /* Espaço interno ajustado */
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Sombra elegante */
+  text-align: center; /* Centraliza o conteúdo */
+  max-width: 450px; /* Largura máxima */
+  width: 90%; /* Responsivo */
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-show-edit p {
+  font-size: 1.4rem; /* Tamanho ajustado */
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 15px; /* Espaçamento menor abaixo do título */
+}
+

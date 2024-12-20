@@ -27,7 +27,7 @@ router.post("/cadastrar", async (req, res) => {
                 `INSERT INTO tb_usuario (NOME, IDADE, EMAIL)
          VALUES (@NOME, @IDADE, @EMAIL)`
             )
-            res.status(201).send('Usuario criado com sucesso')
+        res.status(201).send('Usuario criado com sucesso')
     } catch (err) {
         res.status(500).send('Erro ao criar usuario.');
     }
@@ -38,13 +38,37 @@ router.delete("/usuarios/:ID", async (req, res) => {
     try {
         const conexao = await connectToDatabase()
         await conexao
-        .request()
-        .input('ID', parseInt(ID, 10))
-        .query( 'DELETE FROM tb_usuario WHERE ID = @ID')
+            .request()
+            .input('ID', parseInt(ID, 10))
+            .query('DELETE FROM tb_usuario WHERE ID = @ID')
         res.status(200).send('Usuario deletado com sucesso')
-    } catch(err) {
+    } catch (err) {
         res.status(500).send("Erro ao deletar usuario")
     }
 })
 
+router.put("/usuarios/:ID", async (req, res) => {
+    const { ID } = req.params;
+    const { NOME, IDADE, EMAIL } = req.body;
+
+    try {
+        const conexao = await connectToDatabase()
+
+        await conexao
+            .request()
+            .input("ID", parseInt(ID, 10))
+            .input("NOME", NOME)
+            .input("IDADE", IDADE)
+            .input("EMAIL", EMAIL)
+            .query(`
+                UPDATE tb_usuario
+                SET NOME = @NOME, IDADE = @IDADE, EMAIL = @EMAIL
+                WHERE ID = @ID
+            `);
+        res.status(200).send("Usuário atualizado com sucesso!")
+    } catch (err) {
+        console.error("Erro ao atualizar o usuário:", err);
+        res.status(500).send("Erro ao atualizar o usuário.");
+    }
+})
 export default router
