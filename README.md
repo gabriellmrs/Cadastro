@@ -169,6 +169,4 @@ Caso tenha dúvidas ou sugestões, entre em contato:
 - **LinkedIn**: [Gabriel Morais](https://www.linkedin.com/in/gabriel-morais-649016295/)
 - **GitHub**: [gabriellmrs](https://github.com/gabriellmrs)
 
----
 
-Com esse README, qualquer pessoa pode configurar e executar o projeto na sua própria máquina de forma clara e eficiente! 🚀
